@@ -69,8 +69,8 @@ function AddSong() {
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleCloseDialog} color='primary'>Cancel</Button>
-                    <Button variant='outlined' color='secondary'>Add song</Button>
+                    <Button onClick={handleCloseDialog} color='secondary'>Cancel</Button>
+                    <Button variant='outlined' color='primary'>Add song</Button>
                 </DialogActions>
             </Dialog>
             <TextField 
@@ -91,7 +91,7 @@ function AddSong() {
                 className={classes.addSongButton}
                 onClick={() => setDialog(true)}
                 variant='contained'
-                color='secondary'
+                color='primary'
                 endIcon={<AddBoxOutlined />}
             >
                 Add
