@@ -97,7 +97,7 @@ function AddSong() {
                 Add
             </Button>
         </div>    
-    )
+    );
 }
 
 export default AddSong;
