@@ -48,7 +48,7 @@ function SongPlayer() {
                         <Typography variant='h5' component='h3'>
                             Title
                         </Typography>
-                        <Typography variant='subtitle1' component='hp' color='textSecondary'>
+                        <Typography variant='subtitle1' component='h3' color='textSecondary'>
                             Artist
                         </Typography>
                     </CardContent>
@@ -62,7 +62,7 @@ function SongPlayer() {
                         <IconButton>
                             <SkipNext />
                         </IconButton>
-                        <Typography variant='subtitle1' component='hp' color='textSecondary'>
+                        <Typography variant='subtitle1' component='h3' color='textSecondary'>
                             00:01:30
                         </Typography>
                     </div>
