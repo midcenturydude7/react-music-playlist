@@ -4,13 +4,28 @@ import Header from './components/Header';
 import SongList from './components/SongList';
 import SongPlayer from './components/SongPlayer';
 import { Grid, useMediaQuery, Hidden } from '@material-ui/core';
+import songReducer from './reducer';
+
+export const songContext = React.createContext({
+  song: {
+    id: '65924030-ce39-47cd-8ca9-e2ebe45b41a8',
+    title: 'Resonance',
+    artist: 'HOME',
+    thumbnail: 'http://img.youtube.com/vi/8GW6sLrK40k/0.jpg',
+    url: 'https://www.youtube.com/watch?v=8GW6sLrK40k    ',
+    duration: 213
+  },
+  isPlaying: false
+})
 
 function App() {
+  const initialSongState = React.useContext(songContext);
+  const [state, dispatch] = React.useReducer(songReducer, initialSongState);
   const greaterThanSm = useMediaQuery(theme => theme.breakpoints.up('sm'));
   const greaterThanMd = useMediaQuery(theme => theme.breakpoints.up('md'));
 
   return (
-    <>
+    <songContext.Provider value={{ state, dispatch }}>
       <Hidden only='xs'>
         <Header />
       </Hidden>

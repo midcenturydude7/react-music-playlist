@@ -13,7 +13,7 @@ import { useSubscription } from '@apollo/react-hooks';
 import { GET_SONGS } from '../graphql/subscriptions';
 
 function SongList() {
-    const { data, loading, error } = useSubscription(GET_SONGS)
+    const { data, loading, error } = useSubscription(GET_SONGS);
 
     if (loading) {
         return (
@@ -25,7 +25,7 @@ function SongList() {
             }}>
                 <CircularProgress />
             </div>
-        )
+        );
     }
     if (error) return <div>Error fetching songs</div>
 
