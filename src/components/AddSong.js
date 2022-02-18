@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
     thumbnail: {
         width: '90%'
     }
-}))
+}));
 
 const DEFAULT_SONG = {
     duration: 0,
@@ -59,11 +59,11 @@ function AddSong() {
         setSong(prevSong => ({
             ...prevSong,
             [name]: value
-        }))
+        }));
     }
 
     function handleCloseDialog() {
-        setDialog(false)
+        setDialog(false);
     }
 
     async function handleEditSong({ player }) {
@@ -88,7 +88,7 @@ function AddSong() {
                 title: title.length > 0 ? title : null,
                 artist: artist.length > 0 ? artist : null
                 }
-            })
+            });
             handleCloseDialog();
             setSong(DEFAULT_SONG);
             setUrl('');
@@ -121,7 +121,7 @@ function AddSong() {
                     })
                 }
             })
-        })
+        });
     }
 
     function handleError(field) {

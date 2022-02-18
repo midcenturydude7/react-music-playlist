@@ -20,7 +20,7 @@ function Header() {
                 </Typography>
             </Toolbar>
         </AppBar>
-    )
+    );
 }
 
 export default Header;

@@ -6,7 +6,7 @@ import SongPlayer from './components/SongPlayer';
 import { Grid, useMediaQuery, Hidden } from '@material-ui/core';
 import songReducer from './reducer';
 
-export const songContext = React.createContext({
+export const SongContext = React.createContext({
   song: {
     id: '65924030-ce39-47cd-8ca9-e2ebe45b41a8',
     title: 'Resonance',
@@ -16,16 +16,16 @@ export const songContext = React.createContext({
     duration: 213
   },
   isPlaying: false
-})
+});
 
 function App() {
-  const initialSongState = React.useContext(songContext);
+  const initialSongState = React.useContext(SongContext);
   const [state, dispatch] = React.useReducer(songReducer, initialSongState);
   const greaterThanSm = useMediaQuery(theme => theme.breakpoints.up('sm'));
   const greaterThanMd = useMediaQuery(theme => theme.breakpoints.up('md'));
 
   return (
-    <songContext.Provider value={{ state, dispatch }}>
+    <SongContext.Provider value={{ state, dispatch }}>
       <Hidden only='xs'>
         <Header />
       </Hidden>
@@ -60,7 +60,7 @@ function App() {
           <SongPlayer />
         </Grid>
       </Grid>
-    </>
+    </SongContext.Provider>
   );
 }
 

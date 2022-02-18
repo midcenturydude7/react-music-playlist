@@ -6,4 +6,4 @@ export const ADD_SONG = gql`
         affected_rows
         }
     }
-`
+`;
