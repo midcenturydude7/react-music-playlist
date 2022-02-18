@@ -12,7 +12,7 @@ export const SongContext = React.createContext({
     title: 'Resonance',
     artist: 'HOME',
     thumbnail: 'http://img.youtube.com/vi/8GW6sLrK40k/0.jpg',
-    url: 'https://www.youtube.com/watch?v=8GW6sLrK40k    ',
+    url: 'https://www.youtube.com/watch?v=8GW6sLrK40k',
     duration: 213
   },
   isPlaying: false
