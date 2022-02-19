@@ -47,6 +47,7 @@ function SongPlayer() {
     const reactPlayerRef = React.useRef();
     const { state, dispatch } = React.useContext(SongContext);
     const [played, setPlayed] = React.useState(0);
+    const [playedSeconds, setPlayedSecond] = React.useState(0);
     const [seeking, setSeeking] = React.useState(false);
     const classes = useStyles();
 
@@ -66,6 +67,15 @@ function SongPlayer() {
         setSeeking(false);
         reactPlayerRef.current.seekTo(played);
     }
+
+    function formatDuration(seconds) {
+        let min = Math.floor((seconds / 60));
+        let sec = Math.floor(seconds - (min * 60));
+        if (sec < 10){ 
+            sec  = `0${sec}`;
+        };
+        return `${min}:${sec}`;
+    };
 
     return (
         <>
@@ -90,7 +100,7 @@ function SongPlayer() {
                             <SkipNext />
                         </IconButton>
                         <Typography variant='subtitle1' component='p' color='textSecondary'>
-                            00:01:30
+                            {formatDuration(playedSeconds)}
                         </Typography>
                     </div>
                     <Slider 
@@ -104,6 +114,7 @@ function SongPlayer() {
                     onProgress={({ played, playedSeconds }) => {
                         if (!seeking) {
                             setPlayed(played);
+                            setPlayedSecond(playedSeconds);
                         }
                     }}
                     url={ state.song.url } playing={ state.isPlaying } hidden />
