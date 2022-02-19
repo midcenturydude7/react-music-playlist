@@ -3,13 +3,13 @@ function songReducer(state, action) {
         case "PLAY_SONG": {
             return {
                 ...state, 
-                isPLaying: true
+                isPlaying: true
             };
         }
         case "PAUSE_SONG": {
             return {
                 ...state, 
-                isPLaying: false
+                isPlaying: false
             };
         }
         case "SET_SONG": {
